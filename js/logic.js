@@ -4,7 +4,7 @@
   if (pageId.indexOf("roomid=") != -1) {
     //roomid=以降の値を取得
     pageId = pageId.substring(7, pageId.length);
-    if (! isNaN(pageId)) {
+    if (isNaN(pageId)) {
       // 数値変換不可の場合はエラー画面に遷移
       alert('数値変換可能な値をpageIdには指定して下さい。')
       window.location.href = 'https://makoto0901.github.io/sinkei/notfound.html';
