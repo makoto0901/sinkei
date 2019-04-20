@@ -1,5 +1,5 @@
 (function() {
-  console.log(location.search.substring(1).split('&'));
+  console.log(location.search.substring(1));
   console.log("aaaa");
   // urlパラメータを取得して、動的にスイッチを作る。その内容でストレージ保存
 
