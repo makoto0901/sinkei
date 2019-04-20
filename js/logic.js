@@ -1,12 +1,20 @@
 (function() {
-  const pageId = location.search.substring(1);
+  let pageId = location.search.substring(1);
 
   if (pageId.indexOf("roomid=") != -1) {
-    //
-    pageId = pageId.substring(pageId.indexOf("roomid=") + 1, pageId.length);
+    //roomid=以降の値を取得
+    pageId = pageId.substring(7, pageId.length);
+    if (! isNaN(pageId)) {
+      // 数値変換不可の場合はエラー画面に遷移
+      alert('数値変換可能な値をpageIdには指定して下さい。')
+      window.location.href = 'https://makoto0901.github.io/sinkei/notfound.html';
+    } else {
+
+    }
   } else {
     // エラー画面に遷移
-    window.location.href = 'file:///Users/macuser/workspace/game/sinkei/notfound.html';
+    alert('urlの形式が不正です。urlはindex.html?roomid=xの形式で入力して下さい。')
+    window.location.href = 'https://makoto0901.github.io/sinkei/notfound.html';
   }
 
 
