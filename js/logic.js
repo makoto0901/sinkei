@@ -1,6 +1,17 @@
 (function() {
-  console.log(location.search.substring(1));
-  console.log("aaaa");
+  const pageId = location.search.substring(1);
+
+  if (pageId.indexOf("roomid=") != -1) {
+    //
+    pageId = pageId.substring(pageId.indexOf("roomid=") + 1, pageId.length);
+  } else {
+    // エラー画面に遷移
+    window.location.href = 'file:///Users/macuser/workspace/game/sinkei/notfound.html';
+  }
+
+
+
+  console.log(pageId);
   // urlパラメータを取得して、動的にスイッチを作る。その内容でストレージ保存
 
   // webストレージに確保する
